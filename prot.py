@@ -163,4 +163,10 @@ def main():
     pyplot.title("Charge vs pH")
     pyplot.xlim(0, 14)
     pyplot.savefig("FIG.png")
+
+    user_input_pH_index = int(float(input("Input Desired pH to get charge:\n")) * 1000)
+    print()
+    print("CHARGE AT " + str(float(user_input_pH_index) / 1000) + ":")
+    print(charges_at_pH[user_input_pH_index])
+
 main()
