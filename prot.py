@@ -1,7 +1,6 @@
 from Bio import SeqIO
 from matplotlib import pyplot
 
-
 def main():
     print("Sreenivas Eadara, 2024")
     print()
@@ -147,13 +146,13 @@ def main():
     for i in range(len(charges_at_pH)):
         if charges_at_pH[i] > 0:
             continue
-        upper_bound = charges_at_pH[i]
+        upper_bound = i / 1000
         break
     lower_bound = 0
     for i in range(len(charges_at_pH) - 1, 0, -1):
         if charges_at_pH[i] < 0:
             continue
-        lower_bound = charges_at_pH[i]
+        lower_bound = i / 1000
         break
 
     isoelectric_point = 0.5 * (0.5 * (2 * lower_bound - 1) + 0.5 * (2 * upper_bound + 1))
@@ -161,5 +160,7 @@ def main():
     print(isoelectric_point)
 
     pyplot.plot(pH_range, charges_at_pH)
-
+    pyplot.title("Charge vs pH")
+    pyplot.xlim(0, 14)
+    pyplot.savefig("FIG.png")
 main()
