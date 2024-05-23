@@ -1,4 +1,5 @@
 name: isoelectric_prot
 dependencies:
+ - python>=3.10
  - biopython
  - matplotlib
